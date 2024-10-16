@@ -52,15 +52,24 @@
 
         if (user === "") {
           messageError("Campo usuario no puede estar vacio");
-        } else if (password === "") {
+            } else if (password === "") {
           messageError("Campo contraseña no puede estar vacio");
-        } else {
-          if ((user == userAdmin && password == passrodAdmin)||(user == userAdmin2 && passrodAdmin2)||(user == userAdmin3 && passrodAdmin3)); {
-            window.location.href = "home.php";
-          } else {
-            messageError("Usuario o contraseña incorrectos");
+            } else {
+  
+        if ((user == userAdmin && password == passrodAdmin) || 
+            (user == userAdmin2 && password == passrodAdmin2) || 
+            (user == userAdmin3 && password == passrodAdmin3)) {
+                 window.location.href = "home.php";
+            } else {
+           messageError("Usuario o contraseña incorrectos");
+            }
           }
-        }
+
+// Limpiar campos de entrada
+$("#user_").val("");
+$("#password_").val("");
+
+      
 
         $("#user_").val("");
         $("#password_").val("");
